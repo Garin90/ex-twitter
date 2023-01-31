@@ -1,3 +1,4 @@
+require('./configs/db.config')
 require('dotenv').config();
 
 
@@ -9,6 +10,9 @@ app.use(logger('dev'));
 
 app.set('view engine', 'hbs');
 app.set('views', `${__dirname}/views`);
+
+const router = require(`${__dirname}/configs/routes.config`);
+app.use(router);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Application running at port: ${port}`)); 
