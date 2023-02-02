@@ -10,15 +10,17 @@ const tweetSchema = new Schema({
         type: String,
         require: 'Message is required'
     },
-    createdAt: {
-        type: Date,
-        require: "date is require"
-    },
+    // createdAt: {
+    //     type: Date,
+    //     default: Date.now
+    // },
     fav: {
         type: Boolean,
-        require: true
+        default: false
     }
-});
+},
+{ timestamps: true }
+);
 
 const Tweet = mongoose.model('Tweet', tweetSchema);
 module.exports = Tweet;

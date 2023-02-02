@@ -1,1 +1,14 @@
 <h1>I'm a list</h1>
+
+<a href="/tweets/new"><button>Create a new tweet</button></a>
+
+{{#each tweets as |tweet|}}
+    <li>{{tweet.user}}</li>
+    <li><a href="/tweets/{{tweet.id}}">{{tweet.message}}</a></li>
+    <li>{{#if tweet.updatedAt}} 
+            {{ tweet.updatedAt }}
+        {{ else }} 
+            {{ tweet.createdAt }}
+        {{/if}}</li>
+    <li>{{tweet.fav}}</li>
+{{/each}}

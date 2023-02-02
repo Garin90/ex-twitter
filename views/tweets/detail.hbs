@@ -1,0 +1,12 @@
+<h1>I'm detail page</h1>
+
+    <li>{{tweet.user}}</li>
+    <li>{{tweet.message}}</li>
+    <li>{{tweet.createdAt}}</li>
+    <li>{{tweet.fav}}</li>
+    
+    <a href="/tweets/{{tweet.id}}/update"><button>Edit</button></a>
+
+    <form action="/tweets/{{tweet.id}}/delete" method="post">
+        <button>Delete</button>
+    </form>
