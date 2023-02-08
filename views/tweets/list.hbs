@@ -3,12 +3,12 @@
 <a href="/tweets/new"><button>Create a new tweet</button></a>
 
 {{#each tweets as |tweet|}}
-    <li>{{tweet.user}}</li>
-    <li><a href="/tweets/{{tweet.id}}">{{tweet.message}}</a></li>
+    <li><a href="/tweets/{{tweet.id}}">{{tweet.user}}</a></li>
+    <li>{{tweet.message}}</li>
     <li>{{#if tweet.updatedAt}} 
-            {{ tweet.updatedAt }}
+            {{ date tweet.updatedAt }}
         {{ else }} 
-            {{ tweet.createdAt }}
+            {{ date tweet.createdAt }}
         {{/if}}</li>
     <li>{{tweet.fav}}</li>
 {{/each}}
